@@ -13,9 +13,12 @@ class ViewController: UIViewController {
         
         guard let textButton = sender.currentTitle else { return }
         
+        label.text = textButton
+        
         print(textButton)
     }
     
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

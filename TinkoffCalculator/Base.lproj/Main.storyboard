@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rp-JT-Py0">
-                                <rect key="frame" x="93.666666666666686" y="683.33333333333337" width="187.66666666666663" height="94.666666666666629"/>
+                                <rect key="frame" x="93.666666666666671" y="683.33333333333337" width="187.66666666666663" height="94.666666666666629"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -203,12 +203,19 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yJD-3S-AAA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="ikp-iz-EST">
+                                <rect key="frame" x="20" y="213" width="335" height="71.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="qA8-64-bNG" firstAttribute="bottom" secondItem="2rp-JT-Py0" secondAttribute="top" id="06C-5A-UfF"/>
                             <constraint firstItem="B9m-1Z-KkM" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="0Ev-qy-S5M"/>
+                            <constraint firstItem="ikp-iz-EST" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0fv-C2-do2"/>
                             <constraint firstItem="g5E-Xc-9fE" firstAttribute="leading" secondItem="2rp-JT-Py0" secondAttribute="trailing" id="0hN-RK-gId"/>
                             <constraint firstItem="kcx-gg-Iyu" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="183-by-2QS"/>
                             <constraint firstItem="SJS-D3-LE6" firstAttribute="bottom" secondItem="aUs-OY-bLj" secondAttribute="top" id="2i9-Ys-E9x"/>
@@ -261,6 +268,7 @@
                             <constraint firstItem="JG4-lN-RWl" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="hGM-6V-rgE"/>
                             <constraint firstItem="aUs-OY-bLj" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="hU3-nB-iPk"/>
                             <constraint firstItem="8bJ-nI-M7X" firstAttribute="bottom" secondItem="TsF-R2-WI0" secondAttribute="top" id="imj-7T-jqV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ikp-iz-EST" secondAttribute="trailing" constant="20" id="jNI-QB-rzB"/>
                             <constraint firstItem="dWb-zq-T7j" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="jOE-In-d9q"/>
                             <constraint firstItem="MpG-Pu-xAa" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="kRL-6e-cv5"/>
                             <constraint firstItem="5Ka-qz-F7H" firstAttribute="bottom" secondItem="kcx-gg-Iyu" secondAttribute="top" id="kZl-Dk-JsJ"/>
@@ -269,6 +277,7 @@
                             <constraint firstItem="B9m-1Z-KkM" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="ngy-eg-5Jv"/>
                             <constraint firstItem="TsF-R2-WI0" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="p8f-yW-TFf"/>
                             <constraint firstItem="dWb-zq-T7j" firstAttribute="leading" secondItem="B9m-1Z-KkM" secondAttribute="trailing" id="r3X-Rs-rdO"/>
+                            <constraint firstItem="ikp-iz-EST" firstAttribute="bottom" secondItem="ud4-wN-g3V" secondAttribute="top" constant="-20" id="tTg-g8-WGf"/>
                             <constraint firstItem="ud4-wN-g3V" firstAttribute="bottom" secondItem="JG4-lN-RWl" secondAttribute="top" id="vsi-K9-b8y"/>
                             <constraint firstItem="2rp-JT-Py0" firstAttribute="leading" secondItem="kcx-gg-Iyu" secondAttribute="trailing" id="vv1-rQ-QCy"/>
                             <constraint firstItem="aUs-OY-bLj" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.13" id="xDa-TI-BQp"/>
@@ -277,6 +286,9 @@
                             <constraint firstItem="2oH-8Q-lgv" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.25" id="zwI-Ny-awB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="ikp-iz-EST" id="RmR-3v-T9p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
