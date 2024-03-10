@@ -13,7 +13,7 @@ enum CalculationError: Error {
 
 enum Operation: String {
     case add = "+"
-    case substrct = "-"
+    case substract = "-"
     case multiply = "x"
     case divide = "/"
     
@@ -22,7 +22,7 @@ enum Operation: String {
             
         case .add:
             return number1 + number2
-        case .substrct:
+        case .substract:
             return number1 - number2
         case .multiply:
             return number1 * number2
@@ -52,7 +52,11 @@ class ViewController: UIViewController {
         }
         
         if label.text == "0" {
-            label.text = textButton
+            if textButton == "," {
+                label.text = "0,"
+            } else {
+                label.text = textButton
+            }
         } else {
             label.text?.append(textButton)
         }
