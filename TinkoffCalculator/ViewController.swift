@@ -7,9 +7,32 @@
 
 import UIKit
 
+enum Operation {
+    case add
+    case substrct
+    case multiply
+    case divde
+}
+
+enum CalculationHistoryItem {
+    case number(Double)
+    case operation(Operation)
+}
+
+
+
 class ViewController: UIViewController {
 
     @IBAction func buttonPressed(_ sender: UIButton) {
+        
+        guard let textButton = sender.currentTitle else { return }
+        
+        label.text = textButton
+        
+        print(textButton)
+    }
+    
+    @IBAction func operationButtonPressed(_ sender: UIButton) {
         
         guard let textButton = sender.currentTitle else { return }
         
