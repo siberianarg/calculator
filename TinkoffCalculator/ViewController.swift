@@ -7,13 +7,17 @@
 
 import UIKit
 
+enum CalculationError: Error {
+    case dividedByZero
+}
+
 enum Operation: String {
     case add = "+"
     case substrct = "-"
     case multiply = "x"
     case divide = "/"
     
-    func calculate(_ number1: Double, _ number2: Double) -> Double {
+    func calculate(_ number1: Double, _ number2: Double) throws -> Double {
         switch self {
             
         case .add:
@@ -23,6 +27,10 @@ enum Operation: String {
         case .multiply:
             return number1 * number2
         case .divide:
+            if number2 == 0 {
+                throw CalculationError.dividedByZero
+            }
+            
             return number1 / number2
         }
     }
@@ -80,9 +88,15 @@ class ViewController: UIViewController {
             let labelNumber = numberFormatter.number(from: labelText)?.doubleValue
         else { return }
         
-        let result = calculate()
+        calculationHistory.append(.number(labelNumber))
         
-        label.text = numberFormatter.string(from: NSNumber(value: result))
+        do {
+            let result = try calculate()
+            
+            label.text = numberFormatter.string(from: NSNumber(value: result))
+        } catch {
+            label.text = "Ошибка"
+        }
         
         calculationHistory.removeAll()
     }
@@ -92,7 +106,7 @@ class ViewController: UIViewController {
     var calculationHistory: [CalculationHistoryItem] = []
     
     lazy var numberFormatter: NumberFormatter = {
-        let numberFormatter =  NumberFormatter()
+        let numberFormatter = NumberFormatter()
         numberFormatter.usesGroupingSeparator = false
         numberFormatter.locale = Locale(identifier: "ru_RU")
         numberFormatter.numberStyle = .decimal
@@ -107,7 +121,7 @@ class ViewController: UIViewController {
         resetLabelText()
     }
     
-    func calculate() -> Double {
+    func calculate() throws -> Double {
         guard case .number(let firstNumber) = calculationHistory[0] else { return 0 }
         
         var currentResult = firstNumber
@@ -118,7 +132,7 @@ class ViewController: UIViewController {
                 case .number(let number) = calculationHistory[index + 1]
             else { break }
             
-            currentResult = operation.calculate(currentResult, number)
+            currentResult = try operation.calculate(currentResult, number)
         }
         
         return currentResult
