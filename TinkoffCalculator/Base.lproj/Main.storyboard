@@ -220,6 +220,7 @@
                                 </state>
                                 <connections>
                                     <action selector="clearButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="jYa-ve-to2"/>
+                                    <segue destination="EMG-H2-QLP" kind="show" identifier="CALCULATIONS_LIST" id="6jp-Qp-pcK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -312,7 +313,7 @@
             </objects>
             <point key="canvasLocation" x="989.60000000000002" y="-2.2167487684729066"/>
         </scene>
-        <!--Calculations List View Controller-->
+        <!--Прошлые вычисления-->
         <scene sceneID="nny-0m-bCx">
             <objects>
                 <viewController id="EMG-H2-QLP" customClass="CalculationsListViewController" customModule="TinkoffCalculator" customModuleProvider="target" sceneMemberID="viewController">
@@ -334,6 +335,10 @@
                             <constraint firstItem="d9K-wQ-8iX" firstAttribute="centerX" secondItem="va1-7F-3JY" secondAttribute="centerX" id="sjr-HI-Dvk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Прошлые вычисления" id="0g9-Oy-Fjn"/>
+                    <connections>
+                        <outlet property="calculationLabel" destination="d9K-wQ-8iX" id="SLb-Gz-Lpu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="amG-Fs-JnE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

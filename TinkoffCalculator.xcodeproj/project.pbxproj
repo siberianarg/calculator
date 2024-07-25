@@ -106,11 +106,11 @@
 				26B739EB2B91AB6C008B39AB /* AppDelegate.swift */,
 				26B739ED2B91AB6C008B39AB /* SceneDelegate.swift */,
 				26B739EF2B91AB6C008B39AB /* ViewController.swift */,
+				26FE4C972BBDEEC500A8615F /* CalculationsListViewController.swift */,
 				26B739F12B91AB6C008B39AB /* Main.storyboard */,
 				26B739F42B91AB6F008B39AB /* Assets.xcassets */,
 				26B739F62B91AB6F008B39AB /* LaunchScreen.storyboard */,
 				26B739F92B91AB6F008B39AB /* Info.plist */,
-				26FE4C972BBDEEC500A8615F /* CalculationsListViewController.swift */,
 			);
 			path = TinkoffCalculator;
 			sourceTree = "<group>";
