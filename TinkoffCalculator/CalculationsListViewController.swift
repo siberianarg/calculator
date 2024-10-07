@@ -29,7 +29,7 @@ class CalculationsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        calculationLabel.text = result
+
+        calculationLabel.text = result ?? "NoData"
     }
 }

@@ -101,7 +101,12 @@ class ViewController: UIViewController {
         do {
             let result = try calculate()
             
-            label.text = numberFormatter.string(from: NSNumber(value: result))
+            let resultString = numberFormatter.string(from: NSNumber(value: result))
+            label.text = resultString
+            
+            if let resultString = resultString {
+                calculationsHistory.append(resultString)
+            }
         } catch {
             label.text = "Ошибка"
         }
@@ -112,6 +117,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     
     var calculationHistory: [CalculationHistoryItem] = []
+    var calculationsHistory: [String] = []
     
     lazy var numberFormatter: NumberFormatter = {
         let numberFormatter = NumberFormatter()
@@ -132,7 +138,12 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "CALCULATIONS_LIST",
               let calculationsListVC = segue.destination as? CalculationsListViewController else { return }
-        calculationsListVC.result = label.text
+        
+        if let lastCalculation = calculationsHistory.last {
+            calculationsListVC.result = lastCalculation
+        } else {
+            calculationsListVC.result = "NoData"
+        }
     }
     
     func calculate() throws -> Double {
